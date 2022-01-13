@@ -1,0 +1,15 @@
+name: Lock Issues and Pull Requests
+
+on: 
+  issues:
+    types: [open, closed]
+  pull_request:
+    types: [open, closed]
+
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: OSDKDev/lock-issues@v1.1
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
